@@ -42,7 +42,6 @@ const App = () => {
     todoVal.current.value = ""  
   }
   
-
   
   const deleteTodo = (index)=>{
     console.log("todo deleted" , index);
