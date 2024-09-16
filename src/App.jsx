@@ -35,19 +35,25 @@ const App = () => {
 
   const addTodo = (event)=>{
     event.preventDefault();
+    
+  if(todoVal.current.value===""){
+    alert("Enter a value")    
+
+    console.log("if");
+  
+  }
+  else{
     todo.push(todoVal.current.value)
     setTodo([...todo]);
+    const deleteTodo = (index)=>{
+      console.log("todo deleted" , index);
+      todo.splice(index , 1);
+      setTodo([...todo]);  
     console.log(todo);
-
     todoVal.current.value = ""  
   }
   
-  
-  const deleteTodo = (index)=>{
-    console.log("todo deleted" , index);
-    todo.splice(index , 1);
-    setTodo([...todo]);
-    
+  }
   }
 
 
