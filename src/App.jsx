@@ -37,24 +37,21 @@ const App = () => {
     event.preventDefault();
     
   if(todoVal.current.value===""){
-    alert("Enter a value")    
-
-    console.log("if");
-  
+    alert("Enter a value")      
   }
   else{
     todo.push(todoVal.current.value)
     setTodo([...todo]);
-    const deleteTodo = (index)=>{
-      console.log("todo deleted" , index);
-      todo.splice(index , 1);
-      setTodo([...todo]);  
-    console.log(todo);
     todoVal.current.value = ""  
   }
-  
   }
-  }
+
+  const deleteTodo = (index)=>{
+    console.log("todo deleted" , index);
+    todo.splice(index , 1);
+    setTodo([...todo]);  
+  console.log(todo);
+}
 
 
   const editTodo = (index)=>{
@@ -71,7 +68,7 @@ const App = () => {
     <div className=" d-flex flex-column align-items-center p-4 min-vh-100 bg-light">
       <div className="">
       <h1 className="text-center mt-3">Todo App</h1>
-    <form onSubmit={addTodo} className="d-flex w-100 mb-4 mt-3 "
+    <form onSubmit={addTodo} className="d-flex w-100 mb-4 mt-4 p-3 "
           style={{ maxWidth: '500px' }}>
       <input className="form-control me-2" type="text" placeholder="Enter Text" ref={todoVal} />
       <button className="btn btn-outline-primary " type="submit" >Submit</button>
